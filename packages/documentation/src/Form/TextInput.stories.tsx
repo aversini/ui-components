@@ -70,8 +70,7 @@ export const WithoutReactHookForm: Story<any> = (args) => {
 	const onTextChange = (e: any) => setTextValue(e.target.value);
 	const handleSubmit = (e: any) => {
 		e.preventDefault();
-		// eslint-disable-next-line no-console
-		console.log(textValue);
+		console.info(textValue);
 	};
 	const handleReset = () => setTextValue("");
 
@@ -90,7 +89,7 @@ export const WithoutReactHookForm: Story<any> = (args) => {
 	);
 };
 
-export const WithReactHookForm: Story<any> = (args) => {
+export const WithReactHookForm: Story<any> = () => {
 	const {
 		register,
 		handleSubmit,
@@ -103,16 +102,15 @@ export const WithReactHookForm: Story<any> = (args) => {
 	});
 
 	const onSubmit = (data: any) => {
-		// eslint-disable-next-line no-console
-		console.log(data);
+		console.info(data);
 	};
 
 	useEffect(() => {
-		console.log("isValid: ", isValid);
-		console.log("isDirty: ", isDirty);
-		console.log("isSubmitting: ", isSubmitting);
-		console.log("submitCount: ", submitCount);
-		console.log("errors:", errors);
+		console.info("isValid: ", isValid);
+		console.info("isDirty: ", isDirty);
+		console.info("isSubmitting: ", isSubmitting);
+		console.info("submitCount: ", submitCount);
+		console.info("errors:", errors);
 	}, [errors, isDirty, isSubmitting, isValid, submitCount]);
 
 	return (
