@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.3.2](https://github.com/aversini/ui-components/compare/ui-form-v1.3.1...ui-form-v1.3.2) (2024-04-23)
+
+
+### Bug Fixes
+
+* better error styles for TextInput and TextArea ([#527](https://github.com/aversini/ui-components/issues/527)) ([d0952ab](https://github.com/aversini/ui-components/commit/d0952ab8de74f63adb2d4e67d5d123789788d67a))
+
+## [1.3.1](https://github.com/aversini/ui-components/compare/ui-form-v1.3.0...ui-form-v1.3.1) (2024-04-22)
+
+
+### Bug Fixes
+
+* **TextArea:** field does not grow anymore with extra lines ([#523](https://github.com/aversini/ui-components/issues/523)) ([659d1e9](https://github.com/aversini/ui-components/commit/659d1e9c95ee19c8f1c443b0147522b019406271))
+
 ## [1.3.0](https://github.com/aversini/ui-components/compare/ui-form-v1.2.1...ui-form-v1.3.0) (2024-04-14)
 
 

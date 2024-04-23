@@ -34,7 +34,7 @@ export const ModalContent = React.forwardRef<
 	const { context: floatingContext, ...context } = useModalContext();
 	const ref = useMergeRefs([context.refs.setFloating, propRef]);
 
-	/* v8 ignore next 1 */
+	/* v8 ignore next 3 */
 	if (!floatingContext.open) {
 		return null;
 	}
