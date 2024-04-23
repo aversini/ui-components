@@ -89,7 +89,7 @@ export const WithoutReactHookForm: Story<any> = (args) => {
 	);
 };
 
-export const WithReactHookForm: Story<any> = () => {
+export const WithReactHookForm: Story<any> = (args) => {
 	const {
 		register,
 		handleSubmit,
@@ -116,7 +116,7 @@ export const WithReactHookForm: Story<any> = () => {
 	return (
 		<>
 			<div className="min-h-10">
-				{/* <form noValidate onSubmit={handleSubmit(onSubmit)}>
+				<form noValidate onSubmit={handleSubmit(onSubmit)}>
 					<div className="flex gap-2">
 						<TextInput
 							{...args}
@@ -144,10 +144,10 @@ export const WithReactHookForm: Story<any> = () => {
 						<Button type="submit">Submit</Button>
 						<Button onClick={() => reset()}>Reset</Button>
 					</div>
-				</form> */}
+				</form>
 			</div>
 
-			<div className="min-h-10">
+			{/* <div className="min-h-10">
 				<form noValidate onSubmit={handleSubmit(onSubmit)}>
 					<label>First name</label>
 					<input
@@ -180,7 +180,7 @@ export const WithReactHookForm: Story<any> = () => {
 						Reset
 					</Button>
 				</form>
-			</div>
+			</div> */}
 		</>
 	);
 };
