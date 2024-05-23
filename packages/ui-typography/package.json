@@ -1,0 +1,40 @@
+{
+	"name": "@versini/ui-typography",
+	"version": "0.0.0",
+	"license": "MIT",
+	"author": "Arno Versini",
+	"publishConfig": {
+		"access": "public"
+	},
+	"homepage": "https://github.com/aversini/ui-components",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:aversini/ui-components.git"
+	},
+	"type": "module",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": ["dist"],
+	"scripts": {
+		"build:check": "tsc",
+		"build:js": "vite build",
+		"build:types": "tsup",
+		"build": "npm-run-all --serial clean build:check build:js build:types",
+		"clean": "rimraf dist",
+		"dev:js": "vite build --watch --mode development",
+		"dev:types": "tsup --watch src",
+		"dev": "npm-run-all clean --parallel dev:js dev:types",
+		"lint": "biome lint src",
+		"test:coverage": "vitest run --coverage",
+		"test:watch": "vitest",
+		"test": "cross-env-shell NODE_ENV=test vitest run"
+	},
+	"dependencies": {
+		"lodash.castarray": "4.4.0",
+		"lodash.isplainobject": "4.0.6",
+		"lodash.merge": "4.6.2",
+		"lodash-es": "4.17.21",
+		"postcss-selector-parser": "6.1.0",
+		"tailwindcss": "3.4.3"
+	}
+}

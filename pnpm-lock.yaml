@@ -316,6 +316,24 @@ importers:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
 
+  packages/ui-typography:
+    dependencies:
+      lodash.castarray:
+        specifier: 4.4.0
+        version: 4.4.0
+      lodash.isplainobject:
+        specifier: 4.0.6
+        version: 4.0.6
+      lodash.merge:
+        specifier: 4.6.2
+        version: 4.6.2
+      postcss-selector-parser:
+        specifier: 6.1.0
+        version: 6.1.0
+      tailwindcss:
+        specifier: 3.4.3
+        version: 3.4.3
+
 packages:
 
   '@aashutoshrathi/word-wrap@1.2.6':
@@ -5333,6 +5351,10 @@ packages:
 
   postcss-selector-parser@6.0.15:
     resolution: {integrity: sha512-rEYkQOMUCEMhsKbK66tbEU9QVIxbhN18YiniAwA7XQYTVBqrBy+P2p5JcdqsHgKM2zWylp8d7J6eszocfds5Sw==}
+    engines: {node: '>=4'}
+
+  postcss-selector-parser@6.1.0:
+    resolution: {integrity: sha512-UMz42UD0UY0EApS0ZL9o1XnLhSTtvvvLe5Dc2H2O56fvRZi+KulDyf5ctDhhtYJBGKStV2FL1fy6253cmLgqVQ==}
     engines: {node: '>=4'}
 
   postcss-value-parser@4.2.0:
@@ -13088,13 +13110,13 @@ snapshots:
     dependencies:
       icss-utils: 5.1.0(postcss@8.4.38)
       postcss: 8.4.38
-      postcss-selector-parser: 6.0.15
+      postcss-selector-parser: 6.1.0
       postcss-value-parser: 4.2.0
 
   postcss-modules-scope@3.2.0(postcss@8.4.38):
     dependencies:
       postcss: 8.4.38
-      postcss-selector-parser: 6.0.15
+      postcss-selector-parser: 6.1.0
 
   postcss-modules-values@4.0.0(postcss@8.4.38):
     dependencies:
@@ -13104,7 +13126,7 @@ snapshots:
   postcss-nested@6.0.1(postcss@8.4.38):
     dependencies:
       postcss: 8.4.38
-      postcss-selector-parser: 6.0.15
+      postcss-selector-parser: 6.1.0
 
   postcss-selector-parser@6.0.10:
     dependencies:
@@ -13112,6 +13134,11 @@ snapshots:
       util-deprecate: 1.0.2
 
   postcss-selector-parser@6.0.15:
+    dependencies:
+      cssesc: 3.0.0
+      util-deprecate: 1.0.2
+
+  postcss-selector-parser@6.1.0:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
