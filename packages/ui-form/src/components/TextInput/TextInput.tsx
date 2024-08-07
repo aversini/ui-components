@@ -1,6 +1,6 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 
-import { useUniqueId } from "@versini/ui-hooks";
+import { useResizeObserver, useUniqueId } from "@versini/ui-hooks";
 import { LiveRegion } from "@versini/ui-private";
 import { TEXT_INPUT_CLASSNAME } from "../../common/constants";
 import type { TextInputProps } from "./TextInputTypes";
@@ -35,7 +35,7 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
 		},
 		ref,
 	) => {
-		const rightElementRef = useRef<HTMLDivElement>(null);
+		const [rightElementRef, rect] = useResizeObserver<HTMLDivElement>();
 		const [inputPaddingRight, setInputPaddingRight] = useState(0);
 		const inputId = useUniqueId({ id, prefix: `${TEXT_INPUT_CLASSNAME}-` });
 		const liveErrorMessage = `${name} error, ${helperText}`;
@@ -52,13 +52,18 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
 		});
 
 		useLayoutEffect(() => {
-			if (rightElementRef.current) {
-				setInputPaddingRight(rightElementRef.current.offsetWidth + 18 + 10);
+			if (rect.width) {
+				setInputPaddingRight(rect.width + 18 + 10);
 			}
-		}, []);
+		}, [rect.width]);
 
 		return (
-			<div className={textInputClassName.wrapper}>
+			<div
+				className={textInputClassName.wrapper}
+				style={{
+					visibility: rect.width || !rightElement ? "visible" : "hidden",
+				}}
+			>
 				<label
 					htmlFor={inputId}
 					id={labelId}
